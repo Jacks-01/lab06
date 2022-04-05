@@ -35,12 +35,14 @@ let seattle = {
     cookiesPerHour : [],
     totalCookies : 0,
 
+    // this is the random amount of customers per hour, pushed into our empty customerPerHour array.
     rngCustomer: function () {
         for (let i = 0; i < hours.length; i++) {
             this.customerPerHour.push(random(this.maxCustomer, this.minCustomer));
             console.log(this.customerPerHour);
         }
     },
+    // this is the random amount of cookies per hour, pushed into our empty CookiesPerHour array.
     randomCookie : function (){
         this.rngCustomer();
         for(let i = 0; i < hours.length; i++){
@@ -52,6 +54,7 @@ let seattle = {
 
         }
     },
+    //this is what is rendered to the page via the DOM.
     render(){
         this.randomCookie();
         let unorderedList = document.getElementById('seattle');
@@ -218,8 +221,18 @@ let lima = {
     }
 }
 
-
-function random(maxMonth, minMonth) {
-    return Math.floor(Math.random() * (maxMonth - minMonth) + minMonth);
+/**
+ * 
+ * @param {integer} minCustomer minimum amount of customers
+ * @param {integer} maxCustomer maximum amount of customers
+ * @returns an average number for the callback functions to access
+ */
+function random(minCustomer, maxCustomer) {
+    return Math.floor(Math.random() * (maxCustomer - minCustomer) + minCustomer);
 
 }
+
+// render things to the dom.
+const li = document.createElement('li');
+
+
