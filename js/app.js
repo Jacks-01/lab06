@@ -262,17 +262,36 @@ let lima = {
   render(){
     this.randomCookie();
     let unorderedList = document.getElementById('lima');
-    console.log(seattle);
+
+    for(let i = 0; i < hours.length; i++){
+        let listItem = document.createElement('li');
+        listItem.textContent = `${hours[i]} : ${this.cookiesPerHour[i]} cornz per hour`
+        unorderedList.appendChild(listItem);
+    }
+    //show the totals for the store
+    let totalList = document.createElement('li');
+     totalList.textContent = `${this.totalCookies} total corn cookies per hour`;
+     unorderedList.appendChild(totalList);
   }
-};
+};//closes lima object
+
+let limaHead = document.getElementById('limaHead');
+limaHead.textContent = 'Lima Sales'
+
+lima.render();
+console.log(lima);
 
 
-function random(maxMonth, minMonth) {
-  return Math.floor(Math.random() * (maxMonth - minMonth) + minMonth);
+/**
+ * 
+ * @param {integer} maxCustomer max customer for each store
+ * @param {integer} minCustomer min customer for each store
+ * @returns random number for the functions in each object
+ */
+function random(maxCustomer, minCustomer) {
+  return Math.floor(Math.random() * (maxCustomer - minCustomer) + minCustomer);
 
 }
 
-// render things to the dom.
-const li = document.createElement('li');
 
 
