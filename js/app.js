@@ -209,10 +209,24 @@ let paris = {
   render(){
     this.randomCookie();
     let unorderedList = document.getElementById('paris');
-    console.log(seattle);
-  }
 
-};
+    for(let i = 0; i < hours.length; i++){
+        let listItem = document.createElement('li');
+        listItem.textContent = `${hours[i]} : ${this.cookiesPerHour[i]} cornz per hour`
+        unorderedList.appendChild(listItem);
+    }
+    //show the totals for the store
+    let totalList = document.createElement('li');
+     totalList.textContent = `${this.totalCookies} total corn cookies per hour`;
+     unorderedList.appendChild(totalList);
+  }
+};//closes paris object
+
+let parisHead = document.getElementById('parisHead');
+parisHead.textContent = 'Paris Sales';
+
+paris.render();
+console.log(paris);
 
 let lima = {
   minCustomer: 2,
