@@ -59,6 +59,9 @@ let seattle = {
 
 };//closes object seattle.
 
+let seattleHead = document.getElementById('seattleHead');
+seattleHead.textContent = 'Seattle Sales'
+
 seattle.render();
 console.log(seattle);
 
@@ -150,12 +153,25 @@ let dubai = {
     }
   },
   render(){
-    this.randomCookie();
-    let unorderedList = document.getElementById('dubai');
-    console.log(seattle);
-  }
+        this.randomCookie();
+        let unorderedList = document.getElementById('dubai');
+    
+        for(let i = 0; i < hours.length; i++){
+            let listItem = document.createElement('li');
+            listItem.textContent = `${hours[i]} : ${this.cookiesPerHour[i]} cornz per hour`
+            unorderedList.appendChild(listItem);
+        }
+        //show the totals for the store
+        let totalList = document.createElement('li');
+         totalList.textContent = `${this.totalCookies} total corn cookies per hour`;
+         unorderedList.appendChild(totalList);  }
+};//closes dubai object
 
-};
+let dubaiHead = document.getElementById('dubaiHead')
+dubaiHead.textContent = 'Dubai Sales'
+
+dubai.render();
+console.log(dubai);
 
 let paris = {
   minCustomer: 20,
