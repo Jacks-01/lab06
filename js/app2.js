@@ -2,6 +2,8 @@
 
 //our store hours are defined
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+//hold all store objects inside so we can loop through them
+
 
 //create constructor function for each store
 //                ('seattle', 23 , 65, 6.3, [], [], 0);
@@ -38,7 +40,6 @@ Stores.prototype.avgCookie = function (){
     }
 };
 
-let allStores = [];
 
 /**
  * 
@@ -72,6 +73,10 @@ Stores.prototype.renderTable = function(){
 
 };
 
+Stores.prototype.renderFooter = function(){
+    
+
+};
 
 let seattle = new Stores('seattle',23 ,65, 6.3, [], [], 0);
 seattle.customerPerHour();
@@ -84,6 +89,7 @@ tokyo.customerPerHour();
 tokyo.avgCookie();
 tokyo.renderTable();
 console.log(tokyo);
+
 
 let dubai = new Stores('dubai', 11 , 38, 3.7, [], [], 0);
 dubai.customerPerHour();
@@ -103,14 +109,36 @@ lima.avgCookie();
 lima.renderTable();
 console.log(lima);
 
-Stores.prototype.renderFooter = function(){
-    let tFooter = document.getElementById('renderFooter');
+let allStores = [seattle, tokyo, dubai, paris, lima];
+console.log(allStores); 
 
-};
-// Stores.prototype.render = function(){
-//     for(let i = 0; i < allStores.length; i++){
-        
-//     }
+let tFooter = document.getElementById('renderFooter');
+let footerRow = document.createElement('tr');
+let footerData = document.createElement('td')
+footerData.textContent = 'Totals';
+footerRow.appendChild(footerData);
 
+//loop through the stores, add the 6am sals to the total variable
+for(let j = 0; j < hours.length; j++){
 
-// };
+    let total = 0;
+    for(let i = 0; i < allStores.length; i++){
+        total += allStores[i].cookiesPerHour[j];
+    }
+        let footerTotal = document.createElement('td');
+        footerTotal.textContent = total;
+        footerRow.appendChild(footerTotal);
+        tFooter.appendChild(footerRow);
+}//created a table data element for total
+
+let total = 0;
+for(let x = 0; x < allStores.length; x++){
+    
+   total += allStores[x].totalCookies;
+   console.log(total);
+    
+}
+let cookieTotal = document.createElement('td');
+    cookieTotal.textContent = total;
+    footerRow.appendChild(cookieTotal);
+    tFooter.appendChild(footerRow);
