@@ -117,7 +117,7 @@ let footerData = document.createElement('td');
 footerData.textContent = 'Totals';
 footerRow.appendChild(footerData);
 
-//loop through the stores, add the 6am sals to the total variable
+//loop through the stores, add the 6am sales to the total variable
 for(let j = 0; j < hours.length; j++){
 
   let total = 0;
@@ -160,7 +160,6 @@ function onFormSubmission(event){
   console.log(maxCust);
   const cookiesPerHour = event.target.cookiesPerHour.value;
   console.log(cookiesPerHour);
-
   form.reset();
 
 }
@@ -171,3 +170,4 @@ form.addEventListener('submit', onFormSubmission);
 
 
 
+// on form submission > run render header table, then append form data> render footer data
