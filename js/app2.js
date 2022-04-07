@@ -4,7 +4,6 @@
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 //hold all store objects inside so we can loop through them
 
-
 //create constructor function for each store
 //                ('seattle', 23 , 65, 6.3, [], [], 0);
 function Stores(location, minCustomer, maxCustomer, avgCookies, custHour, cookiesHour, totalCookies){

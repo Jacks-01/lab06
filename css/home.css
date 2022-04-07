@@ -1,0 +1,16 @@
+flex-container1{
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+    
+
+
+
+}
+
+
+
+.flex-container2{
+    display: inline-flex;
+
+}
