@@ -113,40 +113,46 @@ lima.avgCookie();
 // let allStores = [seattle, tokyo, dubai, paris, lima];
 // console.log(allStores);
 
-let tFooter = document.getElementById('renderFooter');
-let footerRow = document.createElement('tr');
-let footerData = document.createElement('td');
-footerData.textContent = 'Totals';
-footerRow.appendChild(footerData);
 
-//loop through the stores, add the 6am sales to the total variable
-for(let j = 0; j < hours.length; j++){
+
+Stores.prototype.renderFooter = function(){
+  let tFooter = document.getElementById('renderFooter');
+  let footerRow = document.createElement('tr');
+  let footerData = document.createElement('td');
+  footerData.textContent = 'Totals';
+  footerRow.appendChild(footerData);
+  //loop through the stores, add the 6am sales to the total variable
+  for(let j = 0; j < hours.length; j++){
+
+    let total = 0;
+    for(let i = 0; i < allStores.length; i++){
+      total += allStores[i].cookiesPerHour[j];
+    }
+    let footerTotal = document.createElement('td');
+    footerTotal.textContent = total;
+    footerRow.appendChild(footerTotal);
+    tFooter.appendChild(footerRow);
+  }//created a table data element for total
 
   let total = 0;
-  for(let i = 0; i < allStores.length; i++){
-    total += allStores[i].cookiesPerHour[j];
+  for(let x = 0; x < allStores.length; x++){
+
+    total += allStores[x].totalCookies;
+    // console.log(total);
+
   }
-  let footerTotal = document.createElement('td');
-  footerTotal.textContent = total;
-  footerRow.appendChild(footerTotal);
+  let cookieTotal = document.createElement('td');
+  // console.log('142',cookieTotal);
+  cookieTotal.textContent = total;
+  // console.log('144',cookieTotal);
+  footerRow.appendChild(cookieTotal);
+  // console.log('146',footerRow);
   tFooter.appendChild(footerRow);
-}//created a table data element for total
-
-let total = 0;
-for(let x = 0; x < allStores.length; x++){
-
-  total += allStores[x].totalCookies;
-  // console.log(total);
-
-}
-let cookieTotal = document.createElement('td');
-// console.log('142',cookieTotal);
-cookieTotal.textContent = total;
-// console.log('144',cookieTotal);
-footerRow.appendChild(cookieTotal);
-// console.log('146',footerRow);
-tFooter.appendChild(footerRow);
 // console.log('148',tFooter);
+};
+
+
+
 
 
 function onFormSubmission(event){
@@ -181,7 +187,7 @@ form.addEventListener('submit', onFormSubmission);
     for(let i = 0; i< allStores.length; i++){
       allStores[i].renderTable();
     }
-
+    Stores.prototype.renderFooter();
   }
 )();
 
