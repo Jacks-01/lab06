@@ -1,6 +1,5 @@
-body{
-    background-image: url(/css/images/sales\ background.jpg);
-    background-size: cover;
-
-
+table, th, td{
+    border: 2px solid;
+    border-collapse: collapse;
+    overflow: auto; 
 }
