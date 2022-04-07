@@ -46,14 +46,14 @@ let seattle = {
     let unorderedList = document.getElementById('seattle');
 
     for(let i = 0; i < hours.length; i++){
-        let listItem = document.createElement('li');
-        listItem.textContent = `${hours[i]} : ${this.cookiesPerHour[i]} cornz per hour`
-        unorderedList.appendChild(listItem);
+      let listItem = document.createElement('li');
+      listItem.textContent = `${hours[i]} : ${this.cookiesPerHour[i]} cornz per hour`
+      unorderedList.appendChild(listItem);
     }
     //show the totals for the store
     let totalList = document.createElement('li');
-     totalList.textContent = `${this.totalCookies} total corn cookies per hour`;
-     unorderedList.appendChild(totalList);
+    totalList.textContent = `${this.totalCookies} total corn cookies per hour`;
+    unorderedList.appendChild(totalList);
   }
 
 
@@ -104,15 +104,15 @@ let tokyo = {
     let unorderedList = document.getElementById('tokyo');
 
     for(let i = 0; i < hours.length; i++){
-        let listItem = document.createElement('li');
-        listItem.textContent = `${hours[i]} : ${this.cookiesPerHour[i]} cornz per hour`
-        unorderedList.appendChild(listItem);
+      let listItem = document.createElement('li');
+      listItem.textContent = `${hours[i]} : ${this.cookiesPerHour[i]} cornz per hour`
+      unorderedList.appendChild(listItem);
     }
     //show the totals for the store
     let totalList = document.createElement('li');
-     totalList.textContent = `${this.totalCookies} total corn cookies per hour`;
-     unorderedList.appendChild(totalList);
-      }
+    totalList.textContent = `${this.totalCookies} total corn cookies per hour`;
+    unorderedList.appendChild(totalList);
+  }
 };// closes object tokyo
 
 let tokyoHead = document.getElementById('tokyoHead')
@@ -153,18 +153,18 @@ let dubai = {
     }
   },
   render(){
-        this.randomCookie();
-        let unorderedList = document.getElementById('dubai');
+    this.randomCookie();
+    let unorderedList = document.getElementById('dubai');
     
-        for(let i = 0; i < hours.length; i++){
-            let listItem = document.createElement('li');
-            listItem.textContent = `${hours[i]} : ${this.cookiesPerHour[i]} cornz per hour`
-            unorderedList.appendChild(listItem);
-        }
-        //show the totals for the store
-        let totalList = document.createElement('li');
-         totalList.textContent = `${this.totalCookies} total corn cookies per hour`;
-         unorderedList.appendChild(totalList);  }
+    for(let i = 0; i < hours.length; i++){
+      let listItem = document.createElement('li');
+      listItem.textContent = `${hours[i]} : ${this.cookiesPerHour[i]} cornz per hour`
+      unorderedList.appendChild(listItem);
+    }
+    //show the totals for the store
+    let totalList = document.createElement('li');
+    totalList.textContent = `${this.totalCookies} total corn cookies per hour`;
+    unorderedList.appendChild(totalList);  }
 };//closes dubai object
 
 let dubaiHead = document.getElementById('dubaiHead')
@@ -211,14 +211,14 @@ let paris = {
     let unorderedList = document.getElementById('paris');
 
     for(let i = 0; i < hours.length; i++){
-        let listItem = document.createElement('li');
-        listItem.textContent = `${hours[i]} : ${this.cookiesPerHour[i]} cornz per hour`
-        unorderedList.appendChild(listItem);
+      let listItem = document.createElement('li');
+      listItem.textContent = `${hours[i]} : ${this.cookiesPerHour[i]} cornz per hour`
+      unorderedList.appendChild(listItem);
     }
     //show the totals for the store
     let totalList = document.createElement('li');
-     totalList.textContent = `${this.totalCookies} total corn cookies per hour`;
-     unorderedList.appendChild(totalList);
+    totalList.textContent = `${this.totalCookies} total corn cookies per hour`;
+    unorderedList.appendChild(totalList);
   }
 };//closes paris object
 
@@ -264,14 +264,14 @@ let lima = {
     let unorderedList = document.getElementById('lima');
 
     for(let i = 0; i < hours.length; i++){
-        let listItem = document.createElement('li');
-        listItem.textContent = `${hours[i]} : ${this.cookiesPerHour[i]} cornz per hour`
-        unorderedList.appendChild(listItem);
+      let listItem = document.createElement('li');
+      listItem.textContent = `${hours[i]} : ${this.cookiesPerHour[i]} cornz per hour`
+      unorderedList.appendChild(listItem);
     }
     //show the totals for the store
     let totalList = document.createElement('li');
-     totalList.textContent = `${this.totalCookies} total corn cookies per hour`;
-     unorderedList.appendChild(totalList);
+    totalList.textContent = `${this.totalCookies} total corn cookies per hour`;
+    unorderedList.appendChild(totalList);
   }
 };//closes lima object
 
