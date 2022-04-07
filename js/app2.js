@@ -1,8 +1,8 @@
 'use strict';
+console.log('connected');
 
 //our store hours are defined
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
-//hold all store objects inside so we can loop through them
 
 //create constructor function for each store
 //                ('seattle', 23 , 65, 6.3, [], [], 0);
@@ -134,14 +134,40 @@ let total = 0;
 for(let x = 0; x < allStores.length; x++){
 
   total += allStores[x].totalCookies;
-  console.log(total);
+  // console.log(total);
 
 }
 let cookieTotal = document.createElement('td');
-console.log('142',cookieTotal);
+// console.log('142',cookieTotal);
 cookieTotal.textContent = total;
-console.log('144',cookieTotal);
+// console.log('144',cookieTotal);
 footerRow.appendChild(cookieTotal);
-console.log('146',footerRow);
+// console.log('146',footerRow);
 tFooter.appendChild(footerRow);
-console.log('148',tFooter);
+// console.log('148',tFooter);
+
+
+function onFormSubmission(event){
+  event.preventDefault();
+  console.log(event.target);
+
+  //grab store location
+  const storeLocation = event.target.location.value;
+  console.log(storeLocation);
+  const minCust = event.target.minCust.value;
+  console.log(minCust);
+  const maxCust = event.target.maxCust.value;
+  console.log(maxCust);
+  const cookiesPerHour = event.target.cookiesPerHour.value;
+  console.log(cookiesPerHour);
+
+  form.reset();
+
+}
+
+let form = document.getElementById('new-store-form');
+form.addEventListener('submit', onFormSubmission);
+// form.reset;
+
+
+
