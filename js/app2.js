@@ -186,3 +186,9 @@ Stores.prototype.renderAllStores = function (){
 };
 Stores.prototype.renderAllStores();
 // on form submission > run render header table, then append form data> render footer data
+
+let test1 = 'test1';
+(function iifeTest() {
+  let test2 = 'test2';
+  console.log({ test1, test2 });
+})();
