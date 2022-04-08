@@ -78,41 +78,46 @@ Stores.prototype.renderTable = function () {
   Stores.prototype.renderFooter();
 };
 
-Stores.prototype.renderFooter = function(){
-  tFooter.innerHTML = '';
-  let footerRow = document.createElement('tr');
-  let footerData = document.createElement('td');
-  footerData.textContent = 'Totals';
-  footerRow.appendChild(footerData);
-  //loop through the stores, add the 6am sales to the total variable
-  for(let j = 0; j < hours.length; j++){
+Stores.prototype.renderFooter = (function renderFooterScope() {
+  // Can return any of these three ways
+  // return renderFooterPrivate;
+  return function renderFooterPrivate() {
+    tFooter.innerHTML = '';
+    let footerRow = document.createElement('tr');
+    let footerData = document.createElement('td');
+    footerData.textContent = 'Totals';
+    footerRow.appendChild(footerData);
+    //loop through the stores, add the 6am sales to the total variable
+    for (let j = 0; j < hours.length; j++) {
+
+      let total = 0;
+      for (let i = 0; i < allStores.length; i++) {
+        total += allStores[i].cookiesPerHour[j];
+      }
+      let footerTotal = document.createElement('td');
+      footerTotal.textContent = total;
+      footerRow.appendChild(footerTotal);
+      tFooter.appendChild(footerRow);
+    }//created a table data element for total
 
     let total = 0;
-    for(let i = 0; i < allStores.length; i++){
-      total += allStores[i].cookiesPerHour[j];
+    for (let x = 0; x < allStores.length; x++) {
+
+      total += allStores[x].totalCookies;
+      // console.log(total);
+
     }
-    let footerTotal = document.createElement('td');
-    footerTotal.textContent = total;
-    footerRow.appendChild(footerTotal);
+    let cookieTotal = document.createElement('td');
+    // console.log('142',cookieTotal);
+    cookieTotal.textContent = total;
+    // console.log('144',cookieTotal);
+    footerRow.appendChild(cookieTotal);
+    // console.log('146',footerRow);
     tFooter.appendChild(footerRow);
-  }//created a table data element for total
-
-  let total = 0;
-  for(let x = 0; x < allStores.length; x++){
-
-    total += allStores[x].totalCookies;
-    // console.log(total);
-
-  }
-  let cookieTotal = document.createElement('td');
-  // console.log('142',cookieTotal);
-  cookieTotal.textContent = total;
-  // console.log('144',cookieTotal);
-  footerRow.appendChild(cookieTotal);
-  // console.log('146',footerRow);
-  tFooter.appendChild(footerRow);
-  // console.log('148',tFooter);
-};
+    // console.log('148',tFooter);
+  };
+  // return renderFooterPrivate;
+})();
 
 let seattle = new Stores('seattle', 23, 65, 6.3, [], [], 0);
 seattle.customerPerHour();
