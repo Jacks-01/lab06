@@ -11,7 +11,7 @@ let tFooter = document.getElementById('renderFooter');
 
 //create constructor function for each store
 //                ('seattle', 23 , 65, 6.3, [], [], 0);
-function Stores(location, minCustomer, maxCustomer, avgCookies, custHour, cookiesHour, totalCookies){
+function Stores(location, minCustomer, maxCustomer, avgCookies, custHour, cookiesHour, totalCookies) {
   this.location = location;
   this.minCustomer = minCustomer;
   this.maxCustomer = maxCustomer;
@@ -25,7 +25,7 @@ function Stores(location, minCustomer, maxCustomer, avgCookies, custHour, cookie
 }
 console.log(allStores);
 //find the customers per hour for each store.
-Stores.prototype.customerPerHour = function(){
+Stores.prototype.customerPerHour = function () {
 
   for (let i = 0; i < hours.length; i++) {
     this.custPerHour.push(random(this.maxCustomer, this.minCustomer));
@@ -34,8 +34,8 @@ Stores.prototype.customerPerHour = function(){
 
 };
 
-Stores.prototype.avgCookie = function (){
-  for(let i = 0; i < hours.length; i++){
+Stores.prototype.avgCookie = function () {
+  for (let i = 0; i < hours.length; i++) {
     let randomCookies = Math.round(this.custPerHour[i] * this.avgCookies);
     //   console.log(randomCookies);
     this.cookiesPerHour.push(randomCookies);
@@ -58,13 +58,13 @@ function random(maxCustomer, minCustomer) {
 }
 let tBody = document.getElementById('renderTable');
 
-Stores.prototype.renderTable = function(){
+Stores.prototype.renderTable = function () {
   let rowBody = document.createElement('tr');
   let storeName = document.createElement('td');
   storeName.textContent = this.location;
   rowBody.appendChild(storeName);
 
-  for(let i = 0; i < hours.length; i++){
+  for (let i = 0; i < hours.length; i++) {
     let tableData = document.createElement('td');
     tableData.textContent = ` ${this.cookiesPerHour[i]}`;
     rowBody.appendChild(tableData);
@@ -114,20 +114,20 @@ Stores.prototype.renderFooter = function(){
   // console.log('148',tFooter);
 };
 
-let seattle = new Stores('seattle',23 ,65, 6.3, [], [], 0);
+let seattle = new Stores('seattle', 23, 65, 6.3, [], [], 0);
 seattle.customerPerHour();
 seattle.avgCookie();
 // seattle.renderTable();
 // console.log(seattle);
 
-let tokyo = new Stores('tokyo',3 ,24, 1.2, [], [], 0);
+let tokyo = new Stores('tokyo', 3, 24, 1.2, [], [], 0);
 tokyo.customerPerHour();
 tokyo.avgCookie();
 // tokyo.renderTable();
 // console.log(tokyo);
 
 
-let dubai = new Stores('dubai', 11 , 38, 3.7, [], [], 0);
+let dubai = new Stores('dubai', 11, 38, 3.7, [], [], 0);
 dubai.customerPerHour();
 dubai.avgCookie();
 // dubai.renderTable();
@@ -149,7 +149,7 @@ lima.avgCookie();
 // console.log(allStores);
 
 
-function onFormSubmission(event){
+function onFormSubmission(event) {
   event.preventDefault();
   console.log(event.target);
 
@@ -177,10 +177,10 @@ form.addEventListener('submit', onFormSubmission);
 // form.reset;
 
 
-Stores.prototype.renderAllStores = function (){
+Stores.prototype.renderAllStores = function () {
   console.log(allStores);
   tBody.innerHTML = '';
-  for(let i = 0; i< allStores.length; i++){
+  for (let i = 0; i < allStores.length; i++) {
     allStores[i].renderTable();
   }
 };
