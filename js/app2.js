@@ -4,10 +4,6 @@ console.log('connected');
 //our store hours are defined
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 let allStores = [];
-let tFooter = document.getElementById('renderFooter');
-
-
-
 
 //create constructor function for each store
 //                ('seattle', 23 , 65, 6.3, [], [], 0);
@@ -79,6 +75,9 @@ Stores.prototype.renderTable = function () {
 };
 
 Stores.prototype.renderFooter = (function renderFooterScope() {
+  // Variable in IIFE is hidden from the page
+  let tFooter = document.getElementById('renderFooter');
+
   // Can return any of these three ways
   // return renderFooterPrivate;
   return function renderFooterPrivate() {
