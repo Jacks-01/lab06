@@ -1,7 +1,30 @@
-flex-container1{
+body{
+    height: 100vh;
+    background-image: url(/css/images/cornfields.jpg);
+    filter: blur();
+
+    
+
+}
+
+/* .bg-image {
+    background-image: url(/css/images/cornfields.jpg);
+    background-position: center;
+
+
+} */
+
+
+
+#flex-container1{
     display: flex;
     font-size: 30px;
     align-items: center;
+    height: 150px;
+    /* background-image: url(images/cornfields.jpg); */
+    /* background-position: 40% 40%; */
+
+    
     
 
 
@@ -10,7 +33,8 @@ flex-container1{
 
 
 
-.flex-container2{
+#flex-container2{
     display: inline-flex;
+    
 
 }
