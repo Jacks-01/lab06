@@ -1,16 +1,51 @@
-flex-container1{
-    display: flex;
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+/* font-family: 'Oleo Script', cursive; */
+
+@import url('https://fonts.googleapis.com/css2?family=Orelega+One&display=swap');
+/* font-family: 'Orelega One', cursive; */
+
+
+.parent {
+    width: 95vw;
+    height: 60vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+
+.child-1 {
+    display: grid;
+    grid-row: 3;
+    grid-column: 2;
+    align-self: center;
+    justify-items: center;
+    font-family: 'Orelega One', cursive;
+}
+
+li{
+    padding: 2px;
+}
+
+h2 {
     font-size: 30px;
-    align-items: center;
     
-
-
 
 }
 
+body{
+    background-color: #99d3a3;
 
+}
 
-.flex-container2{
-    display: inline-flex;
-
+header{
+    display: grid;
+    grid-row: 1;
+    grid-column: 2;
+    font-family: 'Oleo Script', cursive;
+    font-size: 30px;
+    justify-content: center;
+    justify-items: center;
 }
