@@ -25,23 +25,26 @@
         <div id="parent-container">
         <h1>Add Your Store!</h1>
         <form id="new-store-form">
-            <fieldset>
+            <fieldset id="parent-container2">
                 <legend> Add a New Store! </legend>
-                <label for="location"> Location Name </label>
-                <input type="text" id="location" />
-                <br>
-
-                <label for="minCust"> Minimum Customers </label>
-                        <input type="number" id="minCust" />    
-                        <br>
-
-                        <label for="maxCust"> Maximum Customers </label>
-                        <input type="number" id="maxCust" />
-                        <br>
-
-                        <label for="cookiesPerHour"> Cookie Sales Per Hour </label>
-                        <input type="number" id="cookiesPerHour" />
+                <div>
+                    <label for="location"> Location Name </label>
+                    <input type="text" id="location" />
+                </div>
+                <div>
+                    <label for="minCust"> Minimum Customers </label>
+                    <input type="number" id="minCust" />    
+                </div>
+                <div>
+                    <label for="maxCust"> Maximum Customers </label>
+                    <input type="number" id="maxCust" />
+                </div>
+                <div>
+                    <label for="cookiesPerHour"> Cookie Sales Per Hour </label>
+                    <input type="number" id="cookiesPerHour" />
+                </div>
             </fieldset>
+
             <div>
                 <button type="reset" value="reset"> Reset Form </button>
                 <button type="submit"> Submit </button>

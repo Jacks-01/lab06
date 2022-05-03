@@ -52,6 +52,19 @@ fieldset{
     border-width: 5px;
 }
 
+#parent-container2 {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    /* justify-content: space-evenly; */
+}
+
+legend {
+    font-size: 20px;
+    border-bottom: dotted;
+}
+
+
 button {
     display: block;
     margin-top: 10px;
