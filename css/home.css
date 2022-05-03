@@ -9,7 +9,7 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: 1fr 2fr 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     }
@@ -58,6 +58,18 @@ header{
 
 h2 {
     font-size: 30px;
+
+}
+
+section {
+    display: grid;
+    grid-row-start: 2;
+    grid-column-start: 2;
+    justify-content: center;
+}
+
+img {
+    height: 300px;
 
 }
 
