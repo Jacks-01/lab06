@@ -6,17 +6,27 @@
 table, th, td{
     border: 2px solid;
     border-collapse: collapse;
-    overflow: auto; 
+    overflow: auto;
+    
 }
 
 table {
     margin-top: 50px;
-    
+
+}
+
+table :nth-child(odd) {
+    background-color: #CDDC6E;
+}
+
+table :nth-child(even){
+    background-color: #E2B671;
+
 }
 
 body {
 
-    background-color: #edde8b;
+    background-color: #99cc669a;
 }
 
 header {
@@ -35,4 +45,20 @@ h1 {
 
 #parent-container {
     display: grid;
+}
+
+fieldset{
+    border-color: rgb(247, 214, 109);
+    border-width: 5px;
+}
+
+button {
+    display: block;
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: 'Paduk', sans-serif;
+    border: none;
+    border-radius: 10px;
+    width: 15%;
+    background-color:cadetblue;
 }
