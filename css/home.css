@@ -27,7 +27,7 @@
 
 .sub-grid{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     column-gap: 1em;
 }
@@ -37,6 +37,18 @@
     grid-column-start: 1;
 
 
+}
+
+a:link{
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: hotpink;
 }
 
 body{
