@@ -6,8 +6,6 @@
 
 
 .parent {
-    width: 95vw;
-    height: 60vh;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -25,13 +23,19 @@
     font-family: 'Orelega One', cursive;
 }
 
-li{
-    padding: 2px;
+
+
+.sub-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: 1em;
 }
 
-h2 {
-    font-size: 30px;
-    
+.sub-grid ul{
+    display: grid;
+    grid-column-start: 1;
+
 
 }
 
@@ -48,4 +52,15 @@ header{
     font-size: 30px;
     justify-content: center;
     justify-items: center;
+    margin-top: 1em;
+    
+}
+
+h2 {
+    font-size: 30px;
+
+}
+
+.locations > li{
+    padding: 2px;
 }
