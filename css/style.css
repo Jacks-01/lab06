@@ -1,5 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Padauk&display=swap');
+/* font-family: 'Padauk', sans-serif; */
+
+
+
 table, th, td{
     border: 2px solid;
     border-collapse: collapse;
-    overflow: auto; 
+    overflow: auto;
+    
+}
+
+table {
+    margin-top: 50px;
+
+}
+
+table :nth-child(odd) {
+    background-color: #CDDC6E;
+}
+
+table :nth-child(even){
+    background-color: #E2B671;
+
+}
+
+body {
+    font-family: 'Padauk', sans-serif;
+    background-color: #99cc669a;
+}
+
+header {
+    width: 600px;
+    margin: 0 auto;
+}
+
+header ul > li {
+    font-family: 'Padauk', sans-serif;
+}
+
+h1 {
+    font-family: 'Padauk', sans-serif;
+
+}
+
+#parent-container {
+    display: grid;
+}
+
+fieldset{
+    border-color: rgb(133, 133, 127);
+    border-width: 5px;
+}
+
+#parent-container2 {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    /* justify-content: space-evenly; */
+}
+
+legend {
+    font-size: 20px;
+    border-bottom: dotted;
+}
+
+
+button {
+    display: block;
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: 'Paduk', sans-serif;
+    border: none;
+    border-radius: 10px;
+    width: 15%;
+    background-color:cadetblue;
 }
