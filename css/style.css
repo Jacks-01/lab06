@@ -42,9 +42,24 @@ header > h1 {
 }
 
 
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-size: 20px;
+}
 
-header ul > li {
-    font-family: 'Padauk', sans-serif;
+a:active {
+    color: black;
+
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color:coral
 }
 
 h1 {
