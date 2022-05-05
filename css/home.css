@@ -15,7 +15,6 @@
     }
 
 .child-1 {
-    display: grid;
     grid-row: 3;
     grid-column: 2;
     align-self: center;
@@ -85,6 +84,30 @@ img {
 
 }
 
-.locations > li{
-    padding: 2px;
+#sub-grid2 {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(5, minmax(100px, 1fr));
+    column-gap: 4em;
+}
+
+#sub-grid2 div{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+dt {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+dd {
+    padding: 4px;
+}
+
+main > h2 {
+    display: grid;
+    justify-items: center;
+    margin-bottom: 1em;
+
 }
